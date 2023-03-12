@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <!--<div id="container">Привет, loftschool!
+      <div class="hello">Привет, loftschool</div>
+      <a href="https://loftschool.com" class="">Перейти на сайт</a>
+    </div>
+    <button id="myButton">нажми меня</button>-->
+    <input type="text" id="phone">
+    <script>
+      /*const element = document.querySelector('#container');
+
+      element.style.color = 'red';
+      element.style.fontSize = '30px';*/
+      
+      /*const element = document.querySelector('.hello');
+
+      element.textContent = 'Это новый текст';*/
+      
+      /*const element = document.createElement('div');
+      const container = document.querySelector('#container');
+
+      container.appendChild(element);
+      element.textContent = 'Текст внутри div'
+
+      const element2 = document.createElement('span');
+      container.appendChild(element2);
+      element2.textContent = 'Текст внутри span';*/
+
+      /*const myButton = document.querySelector('#myButton');
+      const container = document.querySelector('#container');
+
+
+      myButton.addEventListener('click', function() {
+        console.log('клик по кнопке');
+      });
+
+      container.addEventListener('click', function() {
+        console.log('клик по контейнеру');
+      });*/
+
+      /*const myButton = document.querySelector('#myButton');
+      const container = document.querySelector('#container');
+
+      myButton.addEventListener('click', function() {
+        container.style.color = 'red';
+        console.log('клик по кнопке');
+      });
+
+      container.addEventListener('click', function() {
+        console.log('клик по контейнеру');
+      })*/
+
+
+      /*const phone = document.querySelector('#phone');
+
+      phone.addEventListener('keydown', function ()
+      {
+        console.log(event.key);
+      }
+      )*/
+
+      /*const phone = document.querySelector('#phone');
+
+      phone.addEventListener('keydown', function (event)
+      {
+        let isDigit = false;
+
+        if (event.key >=0 || event.key <= 9) {
+          isDigit = true;
+        }
+        if(isDigit == true) {
+          console.log('цифра');
+        } 
+        else {
+          console.log('буква');
+        }
+
+        console.log(event.preventDefault);
+      }
+      )*/
+
+      const phone = document.querySelector('#phone');
+
+      phone.addEventListener('keydown', function (event)
+      {
+        let isDigit = false;
+        let isDash = false;
+        let isControl = false;
+
+        if (event.key >=0 || event.key <= 9) {
+          isDigit = true;
+        }
+
+        if (event.key == '-') {
+          isDash = true;
+        }
+
+        if(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace') {
+          isControl = true;
+        }
+
+        if(/*isDigit == false  && isDash == false*/ !isDigit && !isDash && !isControl) {
+          event.preventDefault();
+        } 
+        
+      })
+    </script>
+  </body>
+</html>

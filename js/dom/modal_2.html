@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./modal_2.css" />
+    <title>Modal</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem magnam
+        ratione quasi alias adipisci molestias doloribus, provident eum natus
+        rerum, numquam delectus cum at nobis consectetur deserunt perspiciatis
+        eveniet temporibus.
+      </p>
+      <button class="btn" id="openOverlay">открыть</button>
+    </div>
+    <script type="html/template" id="overlayTemplate">
+      <div class="fullscreen-menu active">
+        <a href="" class="fullscreen-menu__close">
+          <svg class="fullscreen-menu__close-elem">
+            <use xlink:href="./sprite.svg#close_menu"></use>
+          </svg>
+        </a>
+        <nav class="menu menu--vertical">
+          <ul class="menu__list">
+            <li class="menu__item"> <a href="#" class="menu__link">О нас</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Наушники</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Команда</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Цвета</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Отзывы</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Как мы работаем</a> </li>
+            <li class="menu__item"> <a href="#" class="menu__link">Контакты</a> </li>
+          </ul>
+        </nav>
+      </div>
+    </script>
+    <script src="./modalTemplate_2.js"></script>
+  </body>
+</html>

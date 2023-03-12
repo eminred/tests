@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <style></style>
+</head>
+<body>
+   <form id="myForm">
+       <div>
+           Имя:<br>
+           <input type="text" name="name">
+       </div>
+       <div>
+           Фамилия:<br>
+           <input type="text" name="lastName">
+       </div>
+       <div>
+           Пол:<br>
+           <select name="gender">
+               <option value="m">М</option>
+               <option value="f">Ж</option>
+           </select>
+       </div>
+       <div>
+           <input type="checkbox" name="auto">есть автомобиль
+       </div>
+       <br>
+       <button id="sendButton">отправить</button>
+   </form>
+ 
+   <script>
+       const myForm = document.querySelector('#myForm');
+       const sendButton = document.querySelector('#sendButton');
+ 
+       sendButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          console.log(myForm.elements.name.value);
+
+          console.log(myForm.elements.lastName.value);
+
+          if(myForm.elements.gender.value =='m')
+          {
+            console.log('мужчина');
+          }
+          else {
+            console.log('женщина');
+          }
+          ;
+
+if (myForm.elements.auto.checked == true) {
+  console.log('есть автомобиль');
+}
+
+       });
+   </script>
+</body>
+</html>

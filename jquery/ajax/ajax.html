@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<body>
+   <button id="loadButton">Загрузить</button>
+ 
+   <div id="result"></div>
+ 
+   <script>
+    const loadButton = document.querySelector("#loadButton");
+    const result = document.querySelector('#result');
+ 
+    loadButton.addEventListener('click', () => {
+    const xhr = new XMLHttpRequest();
+ 
+    xhr.open('GET', './friends.json');
+    xhr.responseType = 'json';
+    xhr.send();
+    xhr.addEventListener('load', () => {
+        if (xhr.status >= 400) {
+            console.log('Что-то пошло не так');
+        } else{
+            const friends = xhr.response;
+
+            result.innerHTML = '';
+            for (const friend of friends) {
+                const friendDOM = createFriendDOM(friend);
+                result.appendChild(friendDOM);
+            }
+        }
+
+            //console.log(xhr.responseText);
+            //result.innerHTML = xhr.responseText;
+
+
+        
+    });
+});
+function createFriendDOM(friend) {
+    const div = document.createElement('div');
+    div.classList.add('friend');
+    div.textContent = `${friend.name} ${friend.lastName}`;
+ 
+    return div;
+} 
+
+   </script>
+</body>
+</html>
