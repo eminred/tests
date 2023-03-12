@@ -1,0 +1,82 @@
+body {
+  width: 100%;
+  height: 100%;
+  }
+  
+  $variable: 100px;
+  $color: #000;
+  $text: 'Я текст из переменной';
+  $array: vk, fb, mt; 
+  $blue: #2980b9;
+
+  .block {
+    height: $variable;
+    width: 50%-20%;
+    background: $color;
+    border-bottom: 1px solid white;
+  
+
+  &:after{
+    content: $text;
+    color: azure;
+  }
+  }
+
+  .two {
+    background: $blue;
+  }
+
+  .three {
+    $blue: orange;
+    background: $blue;
+  }
+
+  @mixin input ($width: 300px, $bg:#fff) {
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    width: $width;
+    background: $bg;
+
+    @if $width > 100px {
+      text-align: left;
+    } @else{
+      text-align: center;
+    }
+
+    @if $bg == yellow {
+      color: red;
+    }
+
+  }
+
+  .input {
+    @include input (100px, #2ecc71);
+  }
+
+  .input-short{
+    /*@include input ($bg: yellow);*/
+    @extend .input;
+  }
+
+
+  .social {
+    display: block;
+    margin-bottom: 20px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  @each $social in (f, vk, t) {
+    .social_#{$social}{
+      background: url('/img/#{$social}.png') center center no-repeat;
+
+      &:hover {
+        background: url('/img/#{$social}_hover.png') center center no-repeat;
+      }
+    }
+  }
+  
