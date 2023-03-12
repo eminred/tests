@@ -1,0 +1,31 @@
+.header {
+  position: relative;
+  height: 77px;
+} 
+
+
+/*.header--background {
+  background: url(../../img/hero.jpeg);
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 1202px;
+  position: absolute;
+  }*/
+
+  .contacts__phone {
+  width: 191px;
+  height: 35px;
+  }
+
+  .contacts__info {
+  width: 97px;
+  height: 20px;
+  align-items: center;
+  text-decoration-line: underline;
+  }
+
+  .logo {
+  width: 85px;
+  height: 36px;
+  }

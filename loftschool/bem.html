@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="user"> <!-- Блок -->
+        <h2 class="user__name">Имя пользователя</h2> <!-- Элемент -->
+
+        <ul class="user__professions">  <!-- Элемент -->
+            <li class="user__profession">Токарь</li> <!-- Элемент -->
+            <li class="user__profession">Слесарь</li> <!-- Элемент -->
+            <li class="user__profession user__profession--main">JS-Программист</li> <!-- Элемент И модификатор-->
+        </ul>
+
+        <ul class="user__professions user__professions--additionally"> <!-- Элемент И модификатор-->
+            <li class="user__profession">PHP-Программист</li> <!-- Элемент -->
+            <li class="user__profession user__profession--start">Python-Программист</li> <!-- Элемент И модификатор-->
+            <li class="user__profession">Программист</li> <!-- Элемент -->
+        </ul>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Правильное написание блоков -->
+    <div class="menu"></div>
+    <div class="main-menu"></div>
+    <div class="header-main-menu"></div>
+
+    <!-- Правильное написание элементов -->
+
+    <div class="menu__item"></div>
+    <div class="main-menu__item"></div>
+    <div class="header-main-menu__item"></div>
+
+    <div class="menu__item-main"></div>
+    <div class="main-menu__item-down"></div>
+    <div class="header-main-menu__item-left"></div>
+
+    <!-- Правильное написание модификаторов -->
+
+    <div class="menu menu--main"></div> <!-- Блок с модификатором -->
+    <div class="menu__item-main menu__item-main--dark"></div> <!-- Элемент с модификатором-->
+
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- НЕправильное написание блоков -->
+    <div class="menu--red"></div> <!-- НЕЛЬЗЯ использовать модификатор отдельно от блока или элемента -->
+    <div class="main_menu"></div> <!-- НЕЛЬЗЯ писать элемент через одно нижнее подчёркивание -->
+
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Правильное построение по БЭМ -->
+    <div class="menu">
+        <ul class="menu__list">
+            <li class="menu__item">
+                <a href="" class="menu__link">
+                    <img src="" alt="Картинка, которая является ссылкой 1" class="menu__img">
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link">
+                    <img src="" alt="Картинка, которая является ссылкой 2" class="menu__img">
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="" class="menu__link">
+                    <img src="" alt="Картинка, которая является ссылкой 3" class="menu__img">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- НЕправильное построение по БЭМ -->
+
+    <div class="menu__list"> <!-- Самостоятельный кусок кода начинается с элемента - это НЕВЕРНО -->
+        <ul class="menu"> <!-- родительский блок внутри своего эе эелемента - это НЕВЕРНО -->
+            <li class="menu__link">
+                <a href="" class="menu__link"> 
+                    <!-- Повторяется класс на блоке, который внешне ПО СВОЕЙ СТРУКТУРЕ отличается от блока на котором этот класс уже висит - это НЕВЕРНО -->
+                    <img src="" alt="Картинка, которая является ссылкой 1" class="menu_img"> <!-- НЕЛЬЗЯ писать элемент через одно нижнее подчёркивание -->
+                </a>
+            </li>
+            <li class="menu__link">
+                <a href="" class="menu__link">
+                    <!-- Повторяется класс на блоке, который внешне ПО СВОЕЙ СТРУКТУРЕ отличается от блока на котором этот класс уже висит - это НЕВЕРНО -->
+                    <img src="" alt="Картинка, которая является ссылкой 2" class="menu--img"> <!-- НЕЛЬЗЯ использовать модификатор отдельно от блока или элемента -->
+                </a>
+            </li>
+            <li class="меню__ссылка"> <!-- использован русский текст в названии класса - это НЕВЕРНО -->
+                <a href="" class="menu__ssilka"> <!-- использован транслит для названия класса - это НЕВЕРНО -->
+                    <!-- Повторяется класс на блоке, который внешне ПО СВОЕЙ СТРУКТУРЕ отличается от блока на котором этот класс уже висит - это НЕВЕРНО -->
+                    <img src="" alt="Картинка, которая является ссылкой 3" class="Menu__img"> <!-- название класса написано с ЗАГЛАВНОЙ буквы - это НЕВЕРНО -->
+                </a>
+            </li>
+            <div class="menu__item"> <!-- использован div внутри списка ul - это НЕВЕРНО -->
+                <a href="" class="menu__link">
+                    <img src="" alt="Картинка, которая является ссылкой 4" class="menu__img">
+                </a>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>
